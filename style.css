@@ -1,0 +1,348 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+    position: relative;
+  }
+  
+body {
+  background: linear-gradient(135deg, #e0f7fa, #e1bee7);
+  color: #1f2937;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  width: 90%;
+  max-width: 1200px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+  overflow: hidden;
+  background: #ffffff;
+  animation: fadeIn 1s ease-in-out;
+  transition: transform 0.4s;
+}
+
+.container:hover {
+  transform: scale(1.02);
+}
+
+.sidebar {
+  width: 50%;
+  padding: 40px;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: #f9fafb;
+  border-right: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.instructions {
+  width: 50%;
+  padding: 50px;
+  background: #f9fafb;
+  border-left: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0 20px 20px 0;
+  box-shadow: inset 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.instructions strong {
+  color: #000000;
+}
+.instructions p {
+  color: ffffff;
+  margin-top: 10px;
+}
+
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffffff;
+  font-size: 34px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  animation: slideIn 1s ease-in-out;
+}
+
+h2 {
+  margin-bottom: 10px;
+  color: #4f46e5;
+  font-size: 26px;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  color: #4f46e5;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+input {
+  width: 100%;
+  padding: 16px;
+  margin-bottom: 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.8);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 8px rgba(99, 102, 241, 0.5);
+}
+
+button {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #4ade80, #22c55e);
+  color: #ffffff;
+  font-size: 18px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background: #3b38c4;
+  transform: translateY(-4px);
+}
+
+.alert {
+  background: #f87171;
+  color: #f9fafb;
+  padding: 14px;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  display: none;
+}
+
+.progress-bar {
+  width: 0;
+  height: 20px;
+  background: linear-gradient(135deg, #4ade80, #22c55e);
+  border-radius: 10px;
+  margin-top: 10px;
+  transition: width 0.5s;
+  display: none;
+}
+
+.result {
+  margin-top: 20px;
+  padding: 20px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  display: none;
+}
+
+.metric {
+  margin: 16px 0;
+  font-weight: 500;
+  color: #4f46e5;
+}
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+  color: #ebf1f1;
+  font-size: 14px;
+}
+
+.radio-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.radio-group label {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.button-container {
+    display: flex; 
+    justify-content: center; 
+    margin-top: 20px; 
+}
+
+.contact-button {
+    padding: 10px 15px;
+    background-color: #4f46e5;
+    color: white; 
+    border: none; 
+    border-radius: 5px;
+    cursor: pointer; 
+    font-size: 14px; 
+    max-width: 120px; 
+    text-align: center; 
+}
+
+.contact-button:hover {
+    background-color: #3b38c4; 
+}
+
+.suggestions-button {
+    background-color: #007BFF; /* Mavi arka plan rengi */
+    color: white; /* Beyaz yazı rengi */
+    border: none;
+    border-radius: 5px;
+    padding: 5px 5px; /* Yükseklik için daha küçük padding, yanlardaki padding de küçültüldü */
+    cursor: pointer;
+    margin: 10px auto; /* Butonlar arasında biraz boşluk ve ortalama */
+    font-size: 14px; /* Yazı boyutunu ayarlayın */
+    width: 152px; /* Butonun genişliği ayarlandı */
+    display: block; /* Butonu blok olarak göster */
+}
+
+.suggestions-button:hover {
+    background-color: #0056b3; /* Hover durumunda daha koyu mavi */
+}
+
+#blur-background {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(25px) brightness(0.75);
+    z-index: 999;
+}
+
+#info-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 420px;
+    max-width: 90%;
+    border-radius: 24px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    text-align: center;
+    z-index: 1000;
+}
+
+.info-box {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 16px;
+    padding: 25px;
+    margin: 20px 0;
+    display: none;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: translateY(20px);
+}
+
+.info-box.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.button {
+    margin-top: 25px;
+}
+
+.text {
+    margin-bottom: 25px; 
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; 
+    width: 95%; 
+    max-width: 100%; 
+    padding: 10px; 
+  }
+
+  .sidebar, .instructions {
+    width: 100%; 
+    border-right: none;
+    border-left: none; 
+    padding: 20px; 
+  }
+
+  h1 {
+    font-size: 28px; 
+  }
+
+  h2 {
+    font-size: 22px; 
+  }
+
+  ul {
+    font-size: 14px; 
+  }
+
+  input, button {
+    font-size: 14px; 
+    padding: 12px; 
+  }
+
+  .metric {
+    font-size: 14px; 
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px; 
+  }
+
+  input, button {
+    font-size: 12px;
+    padding: 10px; 
+  }
+
+  .metric {
+    font-size: 12px; 
+  }
+
+  #info-container {
+    width: 90%; 
+    padding: 10px; 
+  }
+
+  .info-box {
+    padding: 15px; 
+    margin: 10px 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

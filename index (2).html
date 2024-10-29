@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PromSoftware Insights Tool</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="/siteanalysis/promsoftware-logo.ico" type="image/png">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h1>PromSoftware Insights Tool</h1>
+            <div id="alert" class="alert"></div>
+    
+            <input type="text" id="url-input" placeholder="e.g., https://www.example.com" />
+    
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="device" value="desktop" checked>
+                    💻
+                </label>
+                <label>
+                    <input type="radio" name="device" value="mobile">
+                    📱
+                </label>
+            </div>
+    
+            <button onclick="analyzeSite()">Analyze</button>
+    
+            <div id="progress" class="progress-bar"></div>
+    
+            <div id="result" class="result">
+                <h2>Analysis Results</h2>
+                <div id="performance-score" class="metric"></div>
+                <div id="fcp" class="metric"></div>
+                <div id="lcp" class="metric"></div>
+                <div id="cls" class="metric"></div>
+                <div id="tbt" class="metric"></div>
+                <div id="tti" class="metric"></div>
+                <div id="opportunities" class="metric"></div>
+            </div>
+    
+            <footer>This tool operates with the PageSpeed Insights API.</footer>
+            <footer>PromSoftware | &copy 2021 All Rights Reserved.</footer>
+        </div>
+    
+        <div class="instructions">
+            <h2>Usage Instructions</h2>
+            <ul>
+                <li><strong>Website URL:</strong> Enter the full URL of the page you want to analyze. Ensure the URL is correct; for example, "https://www.example.com".</li>
+                <li><strong>Device Selection:</strong> Choose the device type for which you'd like to analyze page speed. Click the desktop icon (💻) for desktop speed, or the mobile icon (📱) for mobile speed.</li>
+                <li><strong>Analyze:</strong> After making your selections, click the “Analyze” button. You may need to wait a moment while the tool analyzes site speed using the PageSpeed Insights API.</li>
+                <li><strong>Review Results:</strong> The analysis results will include metrics such as Performance Score, First Contentful Paint (FCP), Largest Contentful Paint (LCP), Cumulative Layout Shift (CLS), Total Blocking Time (TBT), and Time to Interactive (TTI).</li>
+                <li><strong>Improvement Suggestions:</strong> The results will also include recommended improvements that provide actionable steps to enhance page load speed. These suggestions offer valuable tips to boost performance.</li>
+            </ul>
+            <div class="button-container">
+                <button onclick="window.open('https://promsoftware.com.tr/contact', '_blank')" class="contact-button">Contact Us</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="blur-background"></div>
+    <div id="info-container">
+        <div class="info-box active" id="info-step-1">
+            <h2>Step 1: Enter URL</h2>
+            <p>Please enter the URL in the box above to analyze the site.</p>
+            <button onclick="nextStep(1)">Continue</button>
+        </div>
+
+        <div class="info-box" id="info-step-2">
+            <h2>Step 2: Use the Button</h2>
+            <p>Click the 'Analyze' button to perform the analysis.</p>
+            <button onclick="nextStep(2)">Continue</button>
+        </div>
+
+        <div class="info-box" id="info-step-3">
+            <h2>Step 3: Review the Results</h2>
+            <p>View the analysis results and follow the recommendations.</p>
+            <button onclick="nextStep(3)">Continue</button>
+        </div>
+
+        <div class="info-box" id="info-step-4">
+            <h2>Welcome!</h2>
+            <p>You can now actively use the site.</p>
+            <button onclick="startUsingSite()">Start Trying</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
